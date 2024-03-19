@@ -6,6 +6,7 @@ import com.solarchain.client.entity.Client;
 import com.solarchain.client.services.IClientService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,8 @@ import java.util.List;
 @Slf4j
 @RequestMapping("/api/v1/clients")
 public class ClientController {
-    IClientService iClientService ;
+    @Autowired
+    private IClientService iClientService;
 
     @GetMapping("/clients/{name}")
     public List<Client> getClientsByName(@PathVariable("name") String name){
