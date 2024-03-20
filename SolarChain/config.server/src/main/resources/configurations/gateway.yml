@@ -16,11 +16,15 @@ spring:
         - id : clients
           uri : http://localhost:8090
           predicates:
-            - Path=/api/v1/clients/**
+            - Path=/api/v1/**
         - id: projects
           uri: http://localhost:8071
           predicates:
             - Path=/api/v1/projects/**
+        - id: formulaire
+          uri: http://localhost:8777
+          predicates:
+            - Path=/api/v1/formulaire/**
 management:
   tracing:
     sampling:

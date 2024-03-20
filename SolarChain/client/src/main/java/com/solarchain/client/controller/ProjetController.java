@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.NoSuchElementException;
+
 @RestController
 @AllArgsConstructor
 @Slf4j
@@ -27,4 +29,32 @@ public class ProjetController {
             return new ResponseEntity<>("L'offre n'est pas valide", HttpStatus.BAD_REQUEST);
         }
     }
+
+    @PutMapping("/{projetId}/assign-fond")
+    public  ResponseEntity<?>  assignFondToProjet(@PathVariable("projetId") String projetId,
+                                     @RequestParam("montant") Float montant) {
+        try {
+            Projet projet = iProjetService.assignFondToProjet(projetId, montant);
+            return ResponseEntity.ok(projet);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Projet non trouvé.");
+        }
+
+    }
+
+
+    @GetMapping("/{projetId}/pourcentage")
+    public ResponseEntity<?> calculatePercentage(@PathVariable("projetId") String projetId) {
+        try {
+            float pourcentage = iProjetService.calculatePercentage(projetId);
+            return ResponseEntity.ok(pourcentage);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Projet non trouvé.");
+        }
+    }
+
 }

@@ -7,12 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="project" />
-        <module name="keykloak" />
-        <module name="gateway" />
+        <module name="formulaire" />
         <module name="discovery" />
         <module name="client (1)" />
         <module name="client (2)" />
+        <module name="project" />
+        <module name="keykloak" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,6 +26,7 @@
       <module name="client (1)" options="-parameters" />
       <module name="client (2)" options="-parameters" />
       <module name="discovery" options="-parameters" />
+      <module name="formulaire" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="keykloak" options="-parameters" />
       <module name="project" options="-parameters" />

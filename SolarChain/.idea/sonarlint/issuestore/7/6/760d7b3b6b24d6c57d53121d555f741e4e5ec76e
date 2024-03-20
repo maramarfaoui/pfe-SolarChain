@@ -1,0 +1,5 @@
+
+q	java:S116"URename this field "date_debut" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãØï8óûÂå1
+o	java:S116"SRename this field "date_fin" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¹Æ†8óûÂå1
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8´¶àÄå1

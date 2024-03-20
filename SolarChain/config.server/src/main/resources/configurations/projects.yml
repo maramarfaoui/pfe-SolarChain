@@ -19,10 +19,10 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-      database: projects
+      database: solarchain
 application:
   config:
-    clients-url: http://localhost:8222/api/v1/clients
+    clients-url: http://localhost:8090/api/v1/clients
 management:
   tracing:
     sampling:
